@@ -386,7 +386,7 @@ class CrowdSim(gym.Env):
         counter_offset = {'train': self.case_capacity['val'] + self.case_capacity['test'],
                           'val': 0, 'test': self.case_capacity['val']}
 
-        np.random.seed(counter_offset[phase] + self.case_counter[phase] + self.thisSeed)
+        # np.random.seed(counter_offset[phase] + self.case_counter[phase] + self.thisSeed)
 
         self.generate_robot_humans(phase)
 

@@ -319,8 +319,9 @@ class CrowdSimVarNumScenic(CrowdSim):
                           'val': 0, 'test': self.case_capacity['val']}
 
         # here we use a counter to calculate seed. The seed=counter_offset + case_counter
-        self.rand_seed = counter_offset[phase] + self.case_counter[phase] + self.thisSeed
-        np.random.seed(self.rand_seed)
+        self.rand_seed = 0
+        # self.rand_seed = counter_offset[phase] + self.case_counter[phase] + self.thisSeed
+        # np.random.seed(self.rand_seed)
 
         self.generate_robot_humans_scenic(phase, agent_params=agent_params) # FIXME this line should be changed
 
