@@ -123,6 +123,7 @@ class CrowdSimVarNumScenic(CrowdSim):
         human = Human(self.config, 'humans')
         human.v_pref = v_pref
         human.radius = radius
+        # print(f"human radius: {human.radius}")
         # TODO do collision checking and min_dist constraing in scenic
         # reference generate_circle_crossing_human for the requirement
         human.set(px, py, -px, -py, 0, 0, 0)
