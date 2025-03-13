@@ -18,11 +18,11 @@ class CrowdSimEnv(ScenicGymEnv):
 
 vec_env = make_vec_env(CrowdSimEnv)
 
-model = PPO("MlpPolicy", vec_env, verbose=1)
-callback = CheckpointCallback(1e6, "trained_models/baseline_train/", progress_bar=True)
+model = PPO("MultiInputPolicy", vec_env, verbose=1)
+callback = CheckpointCallback(1e6, "trained_models/baseline_train/")
 
 
-model.learn(total_timesteps=1e7, callback=callback)
+model.learn(total_timesteps=1e7, callback=callback, progress_bar=True)
 model.save("baseline_ppo_crowd_nav")
 
 
