@@ -130,8 +130,9 @@ def main():
         max_grad_norm=algo_args.max_grad_norm)
 
 
-
+    # try:
     obs = envs.reset()
+    # except AssertionError
     if isinstance(obs, dict):
         for key in obs:
             rollouts.obs[key][0].copy_(obs[key])
@@ -181,8 +182,8 @@ def main():
                 envs.render()
             # Obser reward and next obs
             obs, reward, done, infos = envs.step(action)
-            # print(f"reward: {reward}")
-
+            # print(f"step reward: {reward}")
+            # print(f"INFOS: {infos}")
 
             for info in infos:
                 if 'episode' in info.keys():
