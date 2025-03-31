@@ -26,6 +26,7 @@ for i in range(3):
             # print(f"Sampled action: {action}")
         # observation, reward, terminated, truncated, info = env.step(action)
         observation, reward, terminated, info = env.step(action)
+        print(f"REWARD: {reward}")
         # print(f"obs: {observation['detected_human_num']} episode {i}")
         # print(observation[0]['position'])
         # episode_over = terminated or truncated

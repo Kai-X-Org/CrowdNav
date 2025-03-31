@@ -58,8 +58,6 @@ def main():
             torch.backends.cudnn.benchmark = True
             torch.backends.cudnn.deterministic = False
 
-
-
     torch.set_num_threads(algo_args.num_threads)
     device = torch.device("cuda" if algo_args.cuda else "cpu")
 
@@ -92,7 +90,8 @@ def main():
     envs = make_vec_envs_scenic(scenario_list, simulator_list, algo_args.seed, algo_args.num_processes,
                          algo_args.gamma, None, device, False, config=env_config, ax=ax, pretext_wrapper=config.env.use_wrapper)
 
-
+    print(f"envs obs space {envs.observation_space.spaces}")
+    print(f"envs act space {envs.action_space}")
     # create a policy network
     actor_critic = Policy(
         envs.observation_space.spaces, # pass the Dict into policy to parse

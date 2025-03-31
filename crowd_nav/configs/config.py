@@ -17,7 +17,7 @@ class ConfigNoArgs(object):
 
     training = BaseConfig()
     # training.device = "cuda:0" if args.cuda else "cpu"
-    training.device = "cpu"
+    training.device = "cuda:0"
 
     # general configs for OpenAI gym env
     env = BaseConfig()
@@ -46,7 +46,7 @@ class ConfigNoArgs(object):
     sim = BaseConfig()
     sim.circle_radius = 6 * np.sqrt(2)
     sim.arena_size = 6
-    sim.human_num = 10
+    sim.human_num = 3
     # actual human num in each timestep, in [human_num-human_num_range, human_num+human_num_range]
     sim.human_num_range = 0
     sim.predict_steps = 5

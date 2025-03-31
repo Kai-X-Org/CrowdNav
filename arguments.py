@@ -7,8 +7,10 @@ def get_args():
     parser = argparse.ArgumentParser(description='RL')
 
     # the saving directory for train.py
+    # parser.add_argument(
+        # '--output_dir', type=str, default='trained_models/my_scenic_model')
     parser.add_argument(
-        '--output_dir', type=str, default='trained_models/my_scenic_model')
+        '--output_dir', type=str, default='trained_models/my_scenic_model_scenic_sampler')
 
     # resume training from an existing checkpoint or not
     parser.add_argument(
