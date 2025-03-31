@@ -51,7 +51,7 @@ def get_args():
     parser.add_argument(
         '--num-processes',
         type=int,
-        default=8,
+        default=16,
         help='how many training processes to use (default: 16)')
 
     parser.add_argument(
