@@ -69,6 +69,11 @@ class DummyVecEnv(VecEnv):
         return [True]
 
     def _save_obs(self, e, obs):
+        if type(obs) != dict:
+            obs = obs[0]
+
+        print(f"OBS {obs}")
+        print(f"OBS type {type(obs)}")
         for k in self.keys:
             if k is None:
                 self.buf_obs[k][e] = obs
@@ -83,6 +88,7 @@ class DummyVecEnv(VecEnv):
 
     def render(self, mode='human'):
         if self.num_envs == 1:
+            print(f"RENDER MODE: {mode}")
             return self.envs[0].render(mode=mode)
         else:
             return super().render(mode=mode)

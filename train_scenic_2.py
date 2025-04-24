@@ -63,7 +63,7 @@ def main():
 
 
     env_name = algo_args.env_name
-
+    config.sim.render = True
     if config.sim.render:
         algo_args.num_processes = 1
         algo_args.num_mini_batch = 1
